@@ -10,13 +10,26 @@
 
 ## GitHub Pages 部署
 
-1. 新建仓库并推送本目录
-2. Settings → Pages → 分支 `main` / 根目录
-3. 域名 DNS：
-   - `@` → GitHub Pages A 记录（185.199.108.153 等四条）
-   - 或 CNAME 到 `用户名.github.io`
-4. 仓库 Settings → Pages → Custom domain 填 `奶娃交通大学.com`
-5. 等待 HTTPS 生效
+1. 在 GitHub 新建空仓库（建议 `moortneli4-ops/naiwa-jiaotong-site`）
+2. 本地推送（需代理时加环境变量）：
+
+```powershell
+$env:https_proxy="http://127.0.0.1:7890"
+$env:http_proxy="http://127.0.0.1:7890"
+$env:GIT_AUTHOR_NAME="Sujun"
+$env:GIT_AUTHOR_EMAIL="sujun@users.noreply.github.com"
+$env:GIT_COMMITTER_NAME="Sujun"
+$env:GIT_COMMITTER_EMAIL="sujun@users.noreply.github.com"
+git -C "C:\Users\Sujun\Desktop\sjtu-agent-main\naiwa-jiaotong-site" remote add origin https://github.com/moortneli4-ops/naiwa-jiaotong-site.git
+git -C "C:\Users\Sujun\Desktop\sjtu-agent-main\naiwa-jiaotong-site" push -u origin main
+```
+
+3. Settings → Pages → `main` / 根目录，保存
+4. 域名 DNS（在域名注册商处）：
+   - `@` A 记录 → `185.199.108.153`、`185.199.109.153`、`185.199.110.153`、`185.199.111.153`
+   - 或 `@` CNAME → `moortneli4-ops.github.io`（部分注册商不支持根域名 CNAME，则用 A 记录）
+5. Pages → Custom domain 填 `奶娃交通大学.com`（Punycode: `xn--tlq19wzg6tr9c466m.com`）
+6. 勾选 Enforce HTTPS，等待生效
 
 ## 本地预览
 
