@@ -1,12 +1,17 @@
 # 奶娃交通大学.com
 
-访问首页后 **50%** 跳转上海交通大学官网，**50%** 展示 QQ 群拼合图。
+访问首页后三者各约 **1/3**：
+- 上海交通大学官网
+- QQ 群拼合图
+- 3D 模型全屏预览（无文字）
 
 ## 文件
 
 - `index.html` — 随机分流入口
 - `image.html` — 展示拼合图片
+- `model.html` — 可爱青蛙 3D 预览
 - `assets/composite.png` — 两张群邀请图左右拼合
+- `assets/frog.glb` — 3D 模型
 
 ## GitHub Pages 部署
 
@@ -33,4 +38,4 @@ git -C "C:\Users\Sujun\Desktop\sjtu-agent-main\naiwa-jiaotong-site" push -u orig
 
 ## 本地预览
 
-直接用浏览器打开 `index.html`，多刷新几次可看到两种去向。
+直接用浏览器打开 `index.html`，多刷新几次可看到三种去向。

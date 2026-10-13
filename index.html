@@ -4,27 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>奶娃交通大学</title>
-  <meta name="description" content="奶娃交通大学 · 随机入口">
   <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-      background: #f3f3f3;
-      color: #333;
-    }
-    p { font-size: 18px; }
+    html, body { margin: 0; background: #ececec; }
   </style>
 </head>
 <body>
-  <p>正在为你分配去向…</p>
   <script>
     (function () {
-      var SJTU_URL = "https://www.sjtu.edu.cn/";
-      var IMAGE_URL = "./image.html";
-      var target = Math.random() < 0.5 ? SJTU_URL : IMAGE_URL;
+      var targets = [
+        "https://www.sjtu.edu.cn/",
+        "./image.html",
+        "./model.html"
+      ];
+      var target = targets[Math.floor(Math.random() * targets.length)];
       window.location.replace(target);
     })();
   </script>
